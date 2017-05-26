@@ -58,12 +58,14 @@ html,body {
 
 body {
 	padding:0 20px;
+	position:relative;
 }
 
 .wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index:1;
   transform: translateY(-50%) translateX(-50%);
   max-width: 600px;
   width: 100%;
@@ -76,6 +78,15 @@ body {
 	display:inline-block;
 }
 
+#logo_svg .cls-1 {
+	fill:#488588;
+	transition:all 0.1s ease-out;
+}
+
+.wrapper:hover #logo_svg .cls-1 {
+	fill:#ffffff;
+}
+
 .logo img {
 	width:100%;
 	height:auto;
@@ -84,4 +95,24 @@ body {
 h1 {
 	margin-top:20px;
 	color: #414141;
+	transition:all 0.1s ease-out;
+}
+
+.wrapper:hover h1 {
+	color: #ffffff;
+}
+
+.background {
+	background-color:#fff;
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	z-index:0;
+	transition:all 0.1s ease-out;
+}
+
+.wrapper:hover + .background {
+	background-color:#488588;
 }
